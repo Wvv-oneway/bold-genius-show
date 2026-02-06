@@ -1,0 +1,12 @@
+/* 移除默认边距，保证页面布局整洁 */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #e4e7eb;
+}
+
+/* 去除链接默认下划线（MUI 已处理，但兜底） */
+a {
+  text-decoration: none;
+}

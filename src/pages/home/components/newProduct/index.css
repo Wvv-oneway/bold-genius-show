@@ -1,0 +1,115 @@
+.long-arrow-icon {
+  width: 38px;
+  height: 16px;
+  margin-left: 16px;
+}
+
+.new-product-content {
+  display: flex;
+  flex-direction: row;
+  /* 隐藏滚动条 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.new-product-content::-webkit-scrollbar {
+  display: none;
+}
+
+.small-screen-box {
+  /* 隐藏滚动条 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.small-screen-box::-webkit-scrollbar {
+  display: none;
+}
+
+.new-product-big-card {
+  width: 1026px;
+  /* height: 660px; */
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.new-product-big-card-img {
+  width: calc(100% - 56px);
+  max-width: 970px;
+  /* height: 410px; */
+  margin: 56px auto;
+  transition: transform 0.5s ease; /* 0.5秒平滑过渡，ease缓动 */
+  transform-origin: center center; /* 从中心放大（默认），可选left/top等 */
+}
+
+.new-product-big-card-img:hover {
+  transform: scale(1.05); /* 放大10%，如需更大可设1.2/1.3等 */
+}
+
+.new-product-small-card-content {
+  /* height: 660px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.new-product-small-card {
+  width: 506px;
+  height: 312px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-product-small-card-img {
+  margin: 36px auto;
+  width: 434px;
+  height: 168px;
+  transition: transform 0.5s ease; /* 0.5秒平滑过渡，ease缓动 */
+  transform-origin: center center; /* 从中心放大（默认），可选left/top等 */
+}
+
+.new-product-small-card-img:hover {
+  transform: scale(1.05); /* 放大10%，如需更大可设1.2/1.3等 */
+}
+
+.new-product-color-picker {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 34px;
+  bottom: 94px;
+}
+
+.new-product-color-picker-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.new-product-color-picker-dot-unselected {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  margin-right: 6px;
+}
+
+.new-product-color-picker-dot-selected {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e26b18;
+  margin-right: 6px;
+}

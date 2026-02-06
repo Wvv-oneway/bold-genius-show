@@ -1,0 +1,49 @@
+.comments-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  /* 小体验优化 */
+  scroll-behavior: smooth;
+}
+
+.comments-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.comments-track {
+  display: flex;
+  gap: 24px;
+  min-width: 1248px; /* 父组件最小宽度 */
+}
+
+.comment-user {
+  margin-top: 32px;
+  margin-left: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment-user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.comment-user-avatar-bg {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.comment-user-info {
+  margin-left: 12px;
+}

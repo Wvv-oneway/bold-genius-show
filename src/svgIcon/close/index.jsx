@@ -1,0 +1,17 @@
+import { SvgIcon } from "@mui/material";
+export default function CloseIcon(props) {
+  return (
+    <SvgIcon
+      viewBox="0 0 24 24"
+      sx={{
+        cursor: "pointer",
+      }}
+      {...props}
+    >
+      <path
+        d="M14.0005 12.2223L20.2227 6L22.0005 7.77778L15.7782 14L22.0005 20.2222L20.2227 22L14.0005 15.7778L7.77827 22L6.00049 20.2222L12.2227 14L6.00049 7.77778L7.77827 6L14.0005 12.2223Z"
+        fill="currentColor"
+      />
+    </SvgIcon>
+  );
+}

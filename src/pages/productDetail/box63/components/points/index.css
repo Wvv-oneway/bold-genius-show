@@ -1,0 +1,33 @@
+.swiper {
+  overflow: visible;
+}
+
+.swiper-pagination {
+  transform: translateX(702px);
+  width: 164px !important;
+  height: 64px;
+  border-radius: 40px;
+  background-color: rgba(195, 195, 195, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 696px !important;
+}
+
+.custom-bullet {
+  display: inline-block; /* 必须 */
+  width: 8px;
+  height: 8px;
+  margin: 0 8px !important;
+  background: #6f7175;
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.custom-bullet.swiper-pagination-bullet-active {
+  width: 44px;
+  border-radius: 10px;
+  background: #6f7175;
+}

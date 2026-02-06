@@ -1,0 +1,16 @@
+.home-banner {
+  width: 100%;
+}
+
+.home-banner-operate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
