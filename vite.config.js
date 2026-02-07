@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  base: mode === "production" ? "/bold-genius-show/" : "/",
+  base: "/",
   server: {
     open: true, // 开发环境启动自动打开浏览器，可选
     port: 8080, // 开发环境端口，可选

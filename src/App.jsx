@@ -5,7 +5,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 // 路由相关
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 // MUI 主题
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
@@ -25,7 +25,7 @@ import ProductDetail from "./pages/productDetail";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router basename={import.meta.env.BASE_URL}>
+      <HashRouter>
         {/* 全局导航栏 */}
         <Navbar />
 
@@ -44,7 +44,7 @@ function App() {
 
         {/* 全局底部版权信息 */}
         <Footer />
-      </Router>
+      </HashRouter>
     </ThemeProvider>
   );
 }
