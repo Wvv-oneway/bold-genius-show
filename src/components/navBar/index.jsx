@@ -1,10 +1,9 @@
 import { Button, Box, Tooltip } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../images/logo.png";
 import logoName from "../images/logoName.png";
 import search from "../images/search.png";
 import UserIcon from "@/svgIcon/user";
-import { navigateTo } from "@/utils";
 import "./index.css";
 
 // 导航菜单列表
@@ -19,6 +18,7 @@ const navItems = [
 export default function Navbar() {
   // 获取当前路由（用于判断激活状态）
   const location = useLocation();
+  const navigate = useNavigate();
   // 响应式判断（是否为移动端）
   // const theme = useTheme();
   // const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -71,7 +71,7 @@ export default function Navbar() {
         <div
           className="nav-logo"
           onClick={() => {
-            navigateTo("/");
+            navigate("/");
           }}
         >
           <img src={logo} className="nav-logo-img" />

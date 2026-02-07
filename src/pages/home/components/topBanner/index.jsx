@@ -9,10 +9,11 @@ import { fontPx, pxToVw } from "@/utils/useResponsivePx";
 import banner from "../../images/banner.png";
 import arrowIcon from "../../images/icon.png";
 import "./index.css";
-import { navigateTo } from "@/utils";
+import { useNavigate } from "react-router-dom";
 
 export default function TopBanner() {
   const isBigScreen = useMediaQuery("(max-width:1920px)");
+  const navigate = useNavigate();
 
   return (
     <Container
@@ -134,7 +135,7 @@ export default function TopBanner() {
               },
             }}
             onClick={() => {
-              navigateTo("/product");
+              navigate("/product");
             }}
           >
             查看参数

@@ -67,7 +67,7 @@ export default function Product() {
               paddingBottom: "24px",
             }}
             onClick={() => {
-              navigateTo(item.link);
+              navigate(item.link);
             }}
           >
             <Box

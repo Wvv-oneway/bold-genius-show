@@ -1,6 +1,6 @@
 import { Typography, Container, Box, useMediaQuery } from "@mui/material";
 import { useRef, useState, useEffect } from "react";
-import { navigateTo } from "@/utils";
+import { useNavigate } from "react-router-dom";
 import arrow from "../../images/longArrow.png";
 import hub1 from "../../images/hub1.png";
 import hub2 from "../../images/hub2.png";
@@ -17,6 +17,7 @@ export default function NewProduct() {
   const isScrollMode = useMediaQuery("(max-width:1500px)");
   const scrollRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const navigate = useNavigate();
 
   const smallImgProduct = [
     { img: hub1, title: "E-SPORTS HUB", tips: "hub文字描述介绍" },
@@ -88,7 +89,7 @@ export default function NewProduct() {
             right: 0,
             cursor: "pointer",
           }}
-          onClick={() => navigateTo("/product")}
+          onClick={() => navigate("/product")}
         >
           <Typography sx={{ fontSize: fontPx(16), color: "#2A343E" }}>
             查看全部

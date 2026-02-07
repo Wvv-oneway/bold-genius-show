@@ -6,7 +6,7 @@ import weibo from "../images/weibo.png";
 import wechat from "../images/wechat.png";
 import tiktok from "../images/tiktok.png";
 import taobao from "../images/taobao.png";
-import { navigateTo } from "@/utils";
+// import { navigateTo } from "@/utils";
 import { fontPx, pxToVw } from "@/utils/useResponsivePx";
 import globalIcon from "../images/global.png";
 import "./index.css";
@@ -46,31 +46,31 @@ export default function Footer() {
         {
           title: "首页",
           onClick: () => {
-            navigateTo("/");
+            navigate("/");
           },
         },
         {
           title: "产品",
           onClick: () => {
-            navigateTo("/product");
+            navigate("/product");
           },
         },
         {
           title: "Hub 桌面模块",
           onClick: () => {
-            navigateTo("/product");
+            navigate("/product");
           },
         },
         {
           title: "配件",
           onClick: () => {
-            navigateTo("/product");
+            navigate("/product");
           },
         },
         {
           title: "个性键帽",
           onClick: () => {
-            navigateTo("/product");
+            navigate("/product");
           },
         },
       ],
@@ -81,7 +81,7 @@ export default function Footer() {
         {
           title: "用户手册",
           onClick: () => {
-            navigateTo(
+            navigate(
               "https://www.notion.so/BOX-63-2f5ed86c634980518d41f06616bf8ce0",
             );
           },
@@ -89,7 +89,7 @@ export default function Footer() {
         {
           title: "常见问题",
           onClick: () => {
-            navigateTo(
+            navigate(
               "https://www.notion.so/BOX-63-2f5ed86c634980518d41f06616bf8ce0",
             );
           },
@@ -97,7 +97,7 @@ export default function Footer() {
         {
           title: "质保政策",
           onClick: () => {
-            navigateTo(
+            navigate(
               "https://www.notion.so/BOX-63-2f5ed86c634980518d41f06616bf8ce0",
             );
           },
@@ -105,7 +105,7 @@ export default function Footer() {
         {
           title: "注册及保修",
           onClick: () => {
-            navigateTo(
+            navigate(
               "https://www.notion.so/BOX-63-2f5ed86c634980518d41f06616bf8ce0",
             );
           },
@@ -124,20 +124,20 @@ export default function Footer() {
         {
           title: "关于我们",
           onClick: () => {
-            navigateTo("/about");
+            navigate("/about");
           },
         },
         {
           title: "联系我们",
           onClick: () => {
-            navigateTo("/service");
+            navigate("/service");
           },
         },
         {
           title: "评论",
           onClick: () => {
             // if (window.location.pathname !== "/") {
-            //   navigateTo("/");
+            //   navigate("/");
             // }
             navigate("/", { state: { scrollTo: "comment" } });
           },

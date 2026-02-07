@@ -6,7 +6,7 @@ import {
   InputAdornment,
 } from "@mui/material";
 import "./index.css";
-import { navigateTo } from "@/utils";
+import { useNavigate } from "react-router-dom";
 import { fontPx } from "@/utils/useResponsivePx";
 import eyeOpen from "@/assets/eye-open.svg";
 import eyeClose from "@/assets/eye-off.svg";
@@ -18,6 +18,7 @@ export default function Register() {
   const [isError, setIsError] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const checkPassword = () => {
     if (!password || !confirmPassword) {
@@ -155,7 +156,7 @@ export default function Register() {
                 marginLeft: "12px",
                 cursor: "pointer",
               }}
-              onClick={() => navigateTo("/login")}
+              onClick={() => navigate("/login")}
             >
               登录
             </Typography>

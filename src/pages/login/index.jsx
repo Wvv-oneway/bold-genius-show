@@ -6,17 +6,18 @@ import {
   InputAdornment,
 } from "@mui/material";
 import "./index.css";
-import { navigateTo } from "@/utils";
 import { fontPx } from "@/utils/useResponsivePx";
 import eyeOpen from "@/assets/eye-open.svg";
 import eyeClose from "@/assets/eye-off.svg";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ResetPasswordModal from "./components/resetPasswordModal";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isError, setIsError] = useState(false);
   const resetPasswordModalRef = useRef(null);
+  const navigate = useNavigate();
 
   return (
     <Container maxWidth="1920px">
@@ -102,7 +103,7 @@ export default function Login() {
                 fontWeight: 400,
                 cursor: "pointer",
               }}
-              onClick={() => navigateTo("/register")}
+              onClick={() => navigate("/register")}
             >
               创建一个账户
             </Typography>
