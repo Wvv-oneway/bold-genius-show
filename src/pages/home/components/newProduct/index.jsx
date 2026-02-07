@@ -88,7 +88,7 @@ export default function NewProduct() {
             right: 0,
             cursor: "pointer",
           }}
-          onClick={() => navigateTo("product")}
+          onClick={() => navigateTo("/product")}
         >
           <Typography sx={{ fontSize: fontPx(16), color: "#2A343E" }}>
             查看全部

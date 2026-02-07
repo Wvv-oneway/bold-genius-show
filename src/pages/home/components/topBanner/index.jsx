@@ -134,7 +134,7 @@ export default function TopBanner() {
               },
             }}
             onClick={() => {
-              navigateTo("product");
+              navigateTo("/product");
             }}
           >
             查看参数

@@ -52,25 +52,25 @@ export default function Footer() {
         {
           title: "产品",
           onClick: () => {
-            navigateTo("product");
+            navigateTo("/product");
           },
         },
         {
           title: "Hub 桌面模块",
           onClick: () => {
-            navigateTo("product");
+            navigateTo("/product");
           },
         },
         {
           title: "配件",
           onClick: () => {
-            navigateTo("product");
+            navigateTo("/product");
           },
         },
         {
           title: "个性键帽",
           onClick: () => {
-            navigateTo("product");
+            navigateTo("/product");
           },
         },
       ],
@@ -124,13 +124,13 @@ export default function Footer() {
         {
           title: "关于我们",
           onClick: () => {
-            navigateTo("about");
+            navigateTo("/about");
           },
         },
         {
           title: "联系我们",
           onClick: () => {
-            navigateTo("service");
+            navigateTo("/service");
           },
         },
         {
