@@ -1,14 +1,22 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import bgImg from "../../images/banner.png";
 import { fontPx } from "@/utils/useResponsivePx";
 
 export default function Banner() {
+  const isBigScreen = useMediaQuery("(max-width:1920px)");
+
   return (
     <Container
       maxWidth={false}
       disableGutters
       sx={{
-        maxWidth: "1920px",
+        // maxWidth: "1920px",
         display: "flex",
         flexDirection: "column",
       }}
@@ -20,13 +28,15 @@ export default function Banner() {
         mode="widthFix"
         sx={{
           width: "100%",
-          height: {
-            xs: "500px",
-            sm: "500px",
-            md: "500px",
-            lg: "974px",
-            xl: "974px",
-          },
+          height: isBigScreen
+            ? {
+                xs: "500px",
+                sm: "500px",
+                md: "500px",
+                lg: "974px",
+                xl: "974px",
+              }
+            : "auto",
           objectFit: "cover",
           objectPosition: "center center",
           display: "block",
@@ -57,7 +67,7 @@ export default function Banner() {
             fontWeight: 700,
           }}
         >
-          三子星 BOX 63
+          银河600 BOX 63
         </Typography>
         <Typography
           variant="h3"

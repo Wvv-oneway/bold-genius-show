@@ -6,6 +6,9 @@ import Details from "./components/details";
 import Interact from "./components/interact";
 import Slug from "./components/slug";
 import Worth from "./components/worth";
+import Voice from "./components/voice";
+import Performance from "./components/performance";
+import Flagship from "./components/flagship";
 
 export default function ProductDetail() {
   return (
@@ -13,7 +16,7 @@ export default function ProductDetail() {
       maxWidth={false}
       disableGutters
       sx={{
-        maxWidth: "1920px",
+        // maxWidth: "1920px",
         display: "flex",
         flexDirection: "column",
       }}
@@ -23,7 +26,10 @@ export default function ProductDetail() {
       <Center />
       <Details />
       <Interact />
+      <Voice />
+      <Performance />
       <Slug />
+      <Flagship />
       <Worth />
     </Container>
   );

@@ -274,6 +274,9 @@ export default function Comment() {
               marginRight: "12px",
               transform: "rotate(90deg)",
               cursor: "pointer",
+              "&:hover": {
+                color: "#E26B18",
+              },
             }}
           />
 
@@ -286,6 +289,9 @@ export default function Comment() {
               marginRight: "12px",
               transform: "rotate(-90deg)",
               cursor: "pointer",
+              "&:hover": {
+                color: "#E26B18",
+              },
             }}
           />
         </Box>

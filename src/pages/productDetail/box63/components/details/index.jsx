@@ -7,6 +7,7 @@ import product2 from "../../images/product2.png";
 import product3 from "../../images/product3.png";
 import product4 from "../../images/product4.png";
 import switchImg from "../../images/switch.png";
+import outside from "../../images/detail5.png";
 import { useState } from "react";
 import "./index.css";
 
@@ -396,6 +397,22 @@ export default function Details() {
               //   marginRight: "177px",
               marginTop: "68px",
               marginRight: "220px",
+            }}
+          />
+        )}
+        {selectedIndex === 4 && (
+          // 外壳
+          <Box
+            component="img"
+            src={outside}
+            alt="switch"
+            sx={{
+              width: "632px",
+              height: "594px",
+              //   marginRight: "177px",
+              position: "absolute",
+              bottom: 0,
+              right: "237px",
             }}
           />
         )}

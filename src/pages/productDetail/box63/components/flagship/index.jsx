@@ -1,8 +1,8 @@
 import { Box, Container } from "@mui/material";
-import { pxToVw, fontPx } from "@/utils/useResponsivePx";
+import { fontPx, pxToVw } from "@/utils/useResponsivePx";
 import LocalAnimatedText from "@/components/localAnimatedText";
 
-export default function Center() {
+export default function Flagship() {
   return (
     <Container
       maxWidth={false}
@@ -11,16 +11,14 @@ export default function Center() {
         maxWidth: "1920px",
         px: `clamp(0px, ${pxToVw(176)}, 176px) !important`,
         display: "flex",
-        flexDirection: "column",
+        alignItems: "center",
+        height: "100vh",
       }}
     >
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          marginTop: "112px",
-          height: "100vh",
         }}
       >
         <LocalAnimatedText
@@ -28,25 +26,22 @@ export default function Center() {
           style={{
             fontSize: fontPx(32),
             lineHeight: fontPx(48),
-            textAlign: "center",
           }}
         >
-          是键盘，也是您的桌面中心
+          极致堆料，每一克，皆是旗舰分量
         </LocalAnimatedText>
         <LocalAnimatedText
           variant="h6"
           style={{
-            textAlign: "center",
             marginTop: "24px",
             fontSize: fontPx(18),
             lineHeight: fontPx(32),
-            px: `clamp(0px, ${pxToVw(176)}, 176px) !important`,
-            whiteSpace: "pre-line",
-            maxWidth: "901px",
+            maxWidth: "460px",
           }}
         >
-          {`告别接口焦虑与线缆缠绕，一套设备，构建高效桌面秩序。
-          BOX63 创新性地将 USB 2.0 高速 Hub 功能融入桌面布局。通过键盘背部的拓展接口，您可以轻松连接无线鼠标接收器、U盘或耳机，无需再弯腰探寻主机背后的插槽。减少桌面线缆，还您一个清爽、无拘束的操作空间。`}
+          到手即满配的诚意 我们将客制化领域的顶级配置，变为 BOX63
+          的全系标配。碳纤维定位板的韧性支撑，配合加厚铺铜黑芯 PCB
+          的扎实基底，构建出无可挑剔的内胆架构。无需繁琐的后续改装，开箱即刻享受顶级手感。
         </LocalAnimatedText>
       </Box>
     </Container>

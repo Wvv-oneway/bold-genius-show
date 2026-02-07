@@ -2,7 +2,7 @@ import { Box, Container } from "@mui/material";
 import { pxToVw, fontPx } from "@/utils/useResponsivePx";
 import LocalAnimatedText from "@/components/localAnimatedText";
 
-export default function Center() {
+export default function Voice() {
   return (
     <Container
       maxWidth={false}
@@ -31,7 +31,7 @@ export default function Center() {
             textAlign: "center",
           }}
         >
-          是键盘，也是您的桌面中心
+          精密堆叠的声学建筑
         </LocalAnimatedText>
         <LocalAnimatedText
           variant="h6"
@@ -45,8 +45,7 @@ export default function Center() {
             maxWidth: "901px",
           }}
         >
-          {`告别接口焦虑与线缆缠绕，一套设备，构建高效桌面秩序。
-          BOX63 创新性地将 USB 2.0 高速 Hub 功能融入桌面布局。通过键盘背部的拓展接口，您可以轻松连接无线鼠标接收器、U盘或耳机，无需再弯腰探寻主机背后的插槽。减少桌面线缆，还您一个清爽、无拘束的操作空间。`}
+          {`拒绝空腔，满配出发。从加厚铺铜黑芯 PCB 到多层消音填充，我们不惜工本堆叠内部用料。高密度材质层层阻隔杂音与共振，只为还原磁轴触底时那一声纯粹、凝实的“雨滴音”。`}
         </LocalAnimatedText>
       </Box>
     </Container>

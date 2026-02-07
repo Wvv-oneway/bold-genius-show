@@ -1,14 +1,29 @@
 import { Container, Box, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+// import { useTheme } from "@mui/material/styles";
 import productImg from "../../images/productImg.png";
 import LocalAnimatedText from "@/components/localAnimatedText";
 import "./index.css";
 import { fontPx, pxToVw } from "@/utils/useResponsivePx";
+import { useEffect, useRef, useState } from "react";
 
 export default function VideoShow() {
-  const theme = useTheme();
-  const isTablet = useMediaQuery("(max-width:1400px)");
+  // const theme = useTheme();
+  // const isTablet = useMediaQuery("(max-width:1400px)");
   const isMobile = useMediaQuery("(max-width:900px)");
+
+  const imgRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // 视口监听逻辑
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => setIsVisible(entries[0].isIntersecting),
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+    );
+    if (imgRef.current) observer.observe(imgRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => imgRef.current && observer.unobserve(imgRef.current);
+  }, []);
 
   return (
     <Container
@@ -24,6 +39,7 @@ export default function VideoShow() {
       }}
     >
       <Box
+        ref={imgRef}
         component="img"
         src={productImg}
         alt="productImg"
@@ -31,6 +47,10 @@ export default function VideoShow() {
           width: `clamp(320px, 60vw, 1135px)`,
           marginTop: isMobile ? 0 : "81px",
           order: isMobile ? 2 : 1,
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? "translateX(0)" : "translateX(-60px)",
+          transition: "opacity 1s ease-out, transform 1s ease-out",
+          transitionDelay: "0.3s",
         }}
       />
       <Box

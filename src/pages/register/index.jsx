@@ -155,7 +155,7 @@ export default function Register() {
                 marginLeft: "12px",
                 cursor: "pointer",
               }}
-              onClick={() => navigateTo("/login")}
+              onClick={() => navigateTo("login")}
             >
               登录
             </Typography>

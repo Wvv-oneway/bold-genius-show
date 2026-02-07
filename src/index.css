@@ -11,12 +11,11 @@ a {
   text-decoration: none;
 }
 
-html::-webkit-scrollbar {
-  display: none; /* 直接隐藏滚动条 */
+/* html::-webkit-scrollbar {
+  display: none;
 }
 
-/* 2. 隐藏 Firefox 滚动条 */
 html {
-  scrollbar-width: none; /* Firefox 专属：隐藏滚动条，值为 none 表示无滚动条 */
-  -ms-overflow-style: none; /* IE/Edge 旧版专属：隐藏滚动条 */
-}
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+} */

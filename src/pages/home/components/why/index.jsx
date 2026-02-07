@@ -178,7 +178,7 @@ export default function Why() {
               className="reason-content"
               style={
                 activeIndex === index || isScrollMode
-                  ? { marginTop: activeIndex === index ? "350px" : "auto" }
+                  ? { marginTop: "350px" }
                   : {}
               }
             >
@@ -251,6 +251,9 @@ export default function Why() {
               marginRight: "12px",
               transform: "rotate(90deg)",
               cursor: "pointer",
+              "&:hover": {
+                color: "#E26B18",
+              },
             }}
           />
           <ArrowIcon
@@ -262,6 +265,9 @@ export default function Why() {
               marginRight: "12px",
               transform: "rotate(-90deg)",
               cursor: "pointer",
+              "&:hover": {
+                color: "#E26B18",
+              },
             }}
           />
         </Box>

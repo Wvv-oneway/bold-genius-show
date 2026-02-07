@@ -1,9 +1,24 @@
 import { Box, Container } from "@mui/material";
 import { fontPx } from "@/utils/useResponsivePx";
 import LocalAnimatedText from "@/components/localAnimatedText";
+import { useEffect, useRef, useState } from "react";
 import slug from "../../images/slug.png";
 
 export default function Slug() {
+  const imgRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // 视口监听逻辑
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => setIsVisible(entries[0].isIntersecting),
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+    );
+    if (imgRef.current) observer.observe(imgRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => imgRef.current && observer.unobserve(imgRef.current);
+  }, []);
+
   return (
     <Container
       maxWidth={false}
@@ -15,12 +30,17 @@ export default function Slug() {
       }}
     >
       <Box
+        ref={imgRef}
         component="img"
         src={slug}
         alt="interact"
         sx={{
           width: "1920px",
           height: "952px",
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? "translateY(0)" : "translateY(38px)",
+          transition: "opacity 1s ease-out, transform 1s ease-out",
+          transitionDelay: "0.3s",
         }}
       />
       <Box

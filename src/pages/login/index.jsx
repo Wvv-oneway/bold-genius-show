@@ -102,7 +102,7 @@ export default function Login() {
                 fontWeight: 400,
                 cursor: "pointer",
               }}
-              onClick={() => navigateTo("/register")}
+              onClick={() => navigateTo("register")}
             >
               创建一个账户
             </Typography>

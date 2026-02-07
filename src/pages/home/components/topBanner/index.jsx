@@ -1,15 +1,24 @@
-import { Typography, Container, Button, Box } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Button,
+  Box,
+  useMediaQuery,
+} from "@mui/material";
 import { fontPx, pxToVw } from "@/utils/useResponsivePx";
 import banner from "../../images/banner.png";
 import arrowIcon from "../../images/icon.png";
 import "./index.css";
+import { navigateTo } from "@/utils";
 
 export default function TopBanner() {
+  const isBigScreen = useMediaQuery("(max-width:1920px)");
+
   return (
     <Container
       maxWidth={false}
       sx={{
-        maxWidth: "1920px",
+        // maxWidth: "1920px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -21,13 +30,15 @@ export default function TopBanner() {
         alt="banner"
         sx={{
           width: "100%", // 关键：图片宽度随容器100%自适应缩窄
-          height: {
-            xs: "500px",
-            sm: "500px",
-            md: "500px",
-            lg: "902px",
-            xl: "902px",
-          }, // 保留原高度，可按需调整
+          height: isBigScreen
+            ? {
+                xs: "500px",
+                sm: "500px",
+                md: "500px",
+                lg: "902px",
+                xl: "902px",
+              }
+            : "auto", // 保留原高度，可按需调整
           objectFit: "cover", // 关键：保持图片比例，裁剪多余部分（不拉伸）
           objectPosition: "center center", // 核心：图片主体内容水平+垂直居中展示，缩窄时裁剪左右
           display: "block", // 消除图片默认行内间隙（可选）
@@ -37,8 +48,10 @@ export default function TopBanner() {
       <Box
         sx={{
           position: "absolute",
-          top: "211px",
-          left: `clamp(0px, ${pxToVw(176)}, 176px) !important`,
+          top: isBigScreen ? "211px" : "10.99vw",
+          left: isBigScreen
+            ? `clamp(0px, ${pxToVw(176)}, 176px) !important`
+            : `${(window.innerWidth - 1920) / 2 + 176}px`,
           display: "flex",
           flexDirection: "column",
         }}
@@ -119,6 +132,9 @@ export default function TopBanner() {
                 backgroundColor: "unset",
                 color: "#C96B2A",
               },
+            }}
+            onClick={() => {
+              navigateTo("product");
             }}
           >
             查看参数

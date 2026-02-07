@@ -1,5 +1,6 @@
 import { Typography, Container, Box, useMediaQuery } from "@mui/material";
 import { useRef, useState, useEffect } from "react";
+import { navigateTo } from "@/utils";
 import arrow from "../../images/longArrow.png";
 import hub1 from "../../images/hub1.png";
 import hub2 from "../../images/hub2.png";
@@ -85,7 +86,9 @@ export default function NewProduct() {
             flexDirection: "row",
             alignItems: "center",
             right: 0,
+            cursor: "pointer",
           }}
+          onClick={() => navigateTo("product")}
         >
           <Typography sx={{ fontSize: fontPx(16), color: "#2A343E" }}>
             查看全部
@@ -347,6 +350,9 @@ export default function NewProduct() {
                 marginRight: "12px",
                 transform: "rotate(90deg)",
                 cursor: "pointer",
+                "&:hover": {
+                  color: "#E26B18",
+                },
               }}
             />
             <ArrowIcon
@@ -358,6 +364,9 @@ export default function NewProduct() {
                 marginRight: "12px",
                 transform: "rotate(-90deg)",
                 cursor: "pointer",
+                "&:hover": {
+                  color: "#E26B18",
+                },
               }}
             />
           </Box>

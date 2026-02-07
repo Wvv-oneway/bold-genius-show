@@ -4,13 +4,14 @@ import logo from "../images/logo.png";
 import logoName from "../images/logoName.png";
 import search from "../images/search.png";
 import UserIcon from "@/svgIcon/user";
+import { navigateTo } from "@/utils";
 import "./index.css";
 
 // 导航菜单列表
 const navItems = [
   { label: "首页", path: "/" },
   { label: "产品", path: "/product" },
-  { label: "驱动", path: "/driver" },
+  { label: "驱动" },
   { label: "关于", path: "/about" },
   { label: "服务中心", path: "/service" },
 ];
@@ -67,7 +68,12 @@ export default function Navbar() {
   return (
     <>
       <div className="nav-bar">
-        <div className="nav-logo">
+        <div
+          className="nav-logo"
+          onClick={() => {
+            navigateTo("/");
+          }}
+        >
           <img src={logo} className="nav-logo-img" />
           <img src={logoName} className="nav-logo-name" />
         </div>
@@ -78,7 +84,9 @@ export default function Navbar() {
         </Box>
 
         <div className="nav-operate">
-          <img src={search} className="nav-icon" />
+          <Tooltip title="搜索" arrow>
+            <img src={search} className="nav-icon" />
+          </Tooltip>
           <Link to="/login">
             {/* <img src={user} className="nav-icon" /> */}
             <Tooltip title="账号登录" arrow>

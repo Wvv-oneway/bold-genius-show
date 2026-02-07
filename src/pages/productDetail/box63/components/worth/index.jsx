@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { pxToVw, fontPx } from "@/utils/useResponsivePx";
 import LocalAnimatedText from "@/components/localAnimatedText";
@@ -48,6 +49,20 @@ export default function Worth() {
     },
   ];
 
+  const boxRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // 视口监听逻辑
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => setIsVisible(entries[0].isIntersecting),
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+    );
+    if (boxRef.current) observer.observe(boxRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => boxRef.current && observer.unobserve(boxRef.current);
+  }, []);
+
   return (
     <Container
       maxWidth={false}
@@ -93,10 +108,20 @@ export default function Worth() {
           width: "100%",
           marginTop: "98px",
         }}
+        ref={boxRef}
       >
         {list.map((item, index) => {
           return (
-            <Box key={`worth_${index}`} sx={{ width: "318px" }}>
+            <Box
+              key={`worth_${index}`}
+              sx={{
+                width: "318px",
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(38px)",
+                transition: "opacity 1s ease-out, transform 1s ease-out",
+                transitionDelay: `${0.3 * index}s`,
+              }}
+            >
               <Box
                 component="img"
                 src={item.icon}
@@ -105,7 +130,7 @@ export default function Worth() {
                   width: "72px",
                   height: "72px",
                   marginTop: "16px",
-                  marginLeft: "35px",
+                  marginLeft: "10px",
                 }}
               />
               <Typography

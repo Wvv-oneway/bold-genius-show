@@ -50,25 +50,25 @@ export default function Footer() {
         {
           title: "产品",
           onClick: () => {
-            navigateTo("/product");
+            navigateTo("product");
           },
         },
         {
           title: "Hub 桌面模块",
           onClick: () => {
-            navigateTo("/product");
+            navigateTo("product");
           },
         },
         {
           title: "配件",
           onClick: () => {
-            navigateTo("/product");
+            navigateTo("product");
           },
         },
         {
           title: "个性键帽",
           onClick: () => {
-            navigateTo("/product");
+            navigateTo("product");
           },
         },
       ],
@@ -78,15 +78,35 @@ export default function Footer() {
       children: [
         {
           title: "用户手册",
+          onClick: () => {
+            navigateTo(
+              "https://www.notion.so/BOX-63-2f5ed86c634980518d41f06616bf8ce0",
+            );
+          },
         },
         {
           title: "常见问题",
+          onClick: () => {
+            navigateTo(
+              "https://www.notion.so/BOX-63-2f5ed86c634980518d41f06616bf8ce0",
+            );
+          },
         },
         {
           title: "质保政策",
+          onClick: () => {
+            navigateTo(
+              "https://www.notion.so/BOX-63-2f5ed86c634980518d41f06616bf8ce0",
+            );
+          },
         },
         {
           title: "注册及保修",
+          onClick: () => {
+            navigateTo(
+              "https://www.notion.so/BOX-63-2f5ed86c634980518d41f06616bf8ce0",
+            );
+          },
         },
         {
           title: "驱动下载",
@@ -101,12 +121,24 @@ export default function Footer() {
       children: [
         {
           title: "关于我们",
+          onClick: () => {
+            navigateTo("about");
+          },
         },
         {
           title: "联系我们",
+          onClick: () => {
+            navigateTo("service");
+          },
         },
         {
           title: "评论",
+          onClick: () => {
+            // 如果页面在首页
+            if (window.location.pathname !== "/") {
+              navigateTo("/");
+            }
+          },
         },
         {
           title: "QQ群",
