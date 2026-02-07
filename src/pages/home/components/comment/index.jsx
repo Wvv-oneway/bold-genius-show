@@ -112,6 +112,7 @@ export default function Comment() {
         justifyContent: "center",
         px: `clamp(0px, ${pxToVw(176)}, 176px) !important`,
       }}
+      id="comment-section"
     >
       <Box
         sx={{

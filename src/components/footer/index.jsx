@@ -1,6 +1,7 @@
 import { Container, Typography } from "@mui/material";
 import { useRef } from "react";
 import logoName from "../images/logoName.png";
+import { useNavigate } from "react-router-dom";
 import weibo from "../images/weibo.png";
 import wechat from "../images/wechat.png";
 import tiktok from "../images/tiktok.png";
@@ -13,6 +14,7 @@ import SelectCityModal from "./selectCityModal";
 
 export default function Footer() {
   const selectCityModalRef = useRef(null);
+  const navigate = useNavigate();
 
   const platformIconArr = [
     {
@@ -134,10 +136,10 @@ export default function Footer() {
         {
           title: "评论",
           onClick: () => {
-            // 如果页面在首页
-            if (window.location.pathname !== "/") {
-              navigateTo("/");
-            }
+            // if (window.location.pathname !== "/") {
+            //   navigateTo("/");
+            // }
+            navigate("/", { state: { scrollTo: "comment" } });
           },
         },
         {
