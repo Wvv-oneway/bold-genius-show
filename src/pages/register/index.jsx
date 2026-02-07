@@ -19,6 +19,10 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+  const [emailError, setEmailError] = useState({
+    status: false, // 是否显示错误
+    message: "", // 错误提示文字
+  });
 
   const checkPassword = () => {
     if (!password || !confirmPassword) {
@@ -27,6 +31,28 @@ export default function Register() {
     }
 
     setIsError(password !== confirmPassword);
+  };
+
+  // 邮箱格式校验正则表达式（通用标准格式）
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  // 输入框内容变化时的处理函数
+  const handleEmailChange = (e) => {
+    const inputValue = e.target.value;
+
+    // 如果输入框不为空且格式错误，显示错误提示
+    if (inputValue && !emailRegex.test(inputValue)) {
+      setEmailError({
+        status: true,
+        message: "请输入有效的电子邮箱格式",
+      });
+    } else {
+      // 格式正确或为空时，清空错误提示
+      setEmailError({
+        status: false,
+        message: "",
+      });
+    }
   };
 
   return (
@@ -61,7 +87,12 @@ export default function Register() {
             sx={{
               width: "540px",
               marginBottom: "20px",
+              height: "auto",
             }}
+            onBlur={handleEmailChange}
+            error={emailError.status}
+            helperText={emailError.message}
+            type="email"
           />
           <TextField
             hiddenLabel

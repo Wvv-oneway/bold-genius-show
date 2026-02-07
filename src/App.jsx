@@ -21,11 +21,13 @@ import About from "./pages/about";
 import Service from "./pages/service";
 import ProductLayout from "./pages/productLayout";
 import ProductDetail from "./pages/productDetail";
+import ScrollToTop from "./components/scrollToTop";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <HashRouter>
+        <ScrollToTop />
         {/* 全局导航栏 */}
         <Navbar />
 

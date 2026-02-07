@@ -19,6 +19,33 @@ export default function Login() {
   const resetPasswordModalRef = useRef(null);
   const navigate = useNavigate();
 
+  const [emailError, setEmailError] = useState({
+    status: false, // 是否显示错误
+    message: "", // 错误提示文字
+  });
+
+  // 邮箱格式校验正则表达式（通用标准格式）
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  // 输入框内容变化时的处理函数
+  const handleEmailChange = (e) => {
+    const inputValue = e.target.value;
+
+    // 如果输入框不为空且格式错误，显示错误提示
+    if (inputValue && !emailRegex.test(inputValue)) {
+      setEmailError({
+        status: true,
+        message: "请输入有效的电子邮箱格式",
+      });
+    } else {
+      // 格式正确或为空时，清空错误提示
+      setEmailError({
+        status: false,
+        message: "",
+      });
+    }
+  };
+
   return (
     <Container maxWidth="1920px">
       <div className="login-body">
@@ -48,10 +75,15 @@ export default function Login() {
           <TextField
             hiddenLabel
             placeholder="电子邮箱"
+            onBlur={handleEmailChange}
+            error={emailError.status}
+            helperText={emailError.message}
             sx={{
               width: "540px",
               marginBottom: "20px",
+              height: "auto",
             }}
+            type="email"
           />
           <TextField
             error={isError}
