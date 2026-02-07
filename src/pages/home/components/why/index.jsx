@@ -164,7 +164,7 @@ export default function Why() {
               flex: isScrollMode
                 ? "0 0 100%"
                 : activeIndex === index
-                  ? "0 0 960px"
+                  ? "0 0 calc(100% - 608px)"
                   : "1 1 506px",
             }}
             onMouseEnter={() => !isScrollMode && setActiveIndex(index)}

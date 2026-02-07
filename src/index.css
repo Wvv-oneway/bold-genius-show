@@ -13,9 +13,8 @@ a {
 
 /* html::-webkit-scrollbar {
   display: none;
-}
+} */
 
 html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-} */
+  overflow-x: hidden;
+}
