@@ -218,7 +218,9 @@ export default function Why() {
                   lineHeight: fontPx(28),
                   color: "rgba(255, 255, 255, 0.5)",
                   marginTop: "24px",
-                  opacity: 1,
+                  opacity: activeIndex === index || isScrollMode ? 1 : 0,
+                  transition: "opacity 0.4s ease",
+                  transitionDelay: activeIndex === index ? "0.4s" : "0s",
                   whiteSpace: "pre-line",
                 }}
               >
