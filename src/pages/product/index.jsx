@@ -10,13 +10,13 @@ export default function Product() {
       name: "BOX 63磁轴体机械键盘",
       description: "碳纤维定位板",
       image: product1,
-      link: "/product/box63",
+      link: "product/box63",
     },
     {
       name: "E-SPORTS HUB",
       description: "桌面模块",
       image: product2,
-      link: "/product/esports-hub",
+      link: "product/esports-hub",
     },
   ];
 
