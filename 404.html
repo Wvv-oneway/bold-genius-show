@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // 自动把所有路径重定向到 index.html
+      const path = location.pathname;
+      sessionStorage.setItem("redirect", path);
+      location.replace("/bold-genius-show/");
+    </script>
+  </head>
+  <body></body>
+</html>
