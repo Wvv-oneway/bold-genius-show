@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview --host 0.0.0.0 --port 8080",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npx gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

@@ -25,7 +25,7 @@ import ProductDetail from "./pages/productDetail";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         {/* 全局导航栏 */}
         <Navbar />
 

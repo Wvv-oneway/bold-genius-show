@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 // 仅引入需要的模块，实现@别名
 import { fileURLToPath, URL } from "url";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
   resolve: {
     alias: {
@@ -11,7 +11,7 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  base: "/bold-genius-show/", // 构建/预览的核心配置，保证IP访问无404
+  base: mode === "production" ? "/bold-genius-show/" : "/",
   server: {
     open: true, // 开发环境启动自动打开浏览器，可选
     port: 8080, // 开发环境端口，可选
@@ -21,4 +21,4 @@ export default defineConfig({
     port: 8080, // 和package.json的preview端口一致
     host: "0.0.0.0", // 和package.json一致，暴露局域网
   },
-});
+}));
